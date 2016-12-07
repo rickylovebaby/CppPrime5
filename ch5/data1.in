@@ -1,0 +1,9 @@
+When we nest an if inside another if, it is possible that there will be more if
+branches than else branches. Indeed, our grading program has four ifs and two
+elses. The question arises: How do we know to which if a given else belongs?
+This problem, usually referred to as a dangling else, is common to many
+programming languages that have both if and if else statements. Different
+languages solve this problem in different ways. In C++ the ambiguity is resolved by
+specifying that each else is matched with the closest preceding unmatched if.
+Programmers sometimes get into trouble when they write code that contains more
+if than else branches. To illustrate the problem, we¡¯ll rewrite the innermost

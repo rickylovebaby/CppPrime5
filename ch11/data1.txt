@@ -1,0 +1,6 @@
+Copies of rvalues are generally move constructed, while copies of lvalues are usually
+copy constructed. An implication is that if you know only that an object is a copy of
+another object, it¡¯s not possible to say how expensive it was to construct the copy. In
+the code above, for example, there¡¯s no way to say how expensive it is to create the
+parameter w without knowing whether rvalues or lvalues are passed to someFunc.
+(You¡¯d also have to know the cost of moving and copying Widgets.
