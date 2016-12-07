@@ -1,0 +1,44 @@
+
+#ifndef CP5_ex7_22_h
+#define CP5_ex7_22_h
+
+#include <string>
+#include <iostream>
+using namespace std;
+
+
+struct Person{
+
+    friend istream &read(istream &is,Person &person)
+    friend ostream &print(ostream &os, const Person &person)
+
+public:
+    Person() = default;
+    Person(const string sname,const string saddr)
+        : name(sname),address(saddr){}
+    Person(istream &is) { read(is,*this); }
+
+    string getName() const {return name;}
+    string getAddress() const {return address;}
+
+private:
+    string name;
+    string address;
+
+};
+
+
+istream &read(istream &is,Person &person)
+{
+    is >> person.name >> person.address;
+    return is;
+}
+ostream &print(ostream &os, const Person &person)
+{
+    os << person.name <<" "<<person.address;
+    return os;
+
+}
+
+
+#endif // CP5_ex7_22_h
